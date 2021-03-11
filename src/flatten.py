@@ -1,7 +1,6 @@
 import sys
 import json
 
-
 # Flattens a dict with a separator
 # Takes a child value that is to be flattened, parent key and the separator.
 # Returns a flattened dictionary
