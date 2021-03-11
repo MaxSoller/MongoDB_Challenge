@@ -1,5 +1,6 @@
 import sys
 import json
+import collections.abc
 
 # Flattens a dict with a separator
 # Takes a child value that is to be flattened, parent key and the separator.
@@ -12,7 +13,7 @@ def flatten(child, parent, separator):
         parent_key = parent + separator + key if len(parent) > 0 else key
 
         # Only flattening nested dict types
-        if isinstance(value, dict):
+        if isinstance(value, collections.abc.MutableMapping):
             un_nested.update(flatten(value, parent_key, separator))
         else:
             un_nested.update({parent_key:value})
